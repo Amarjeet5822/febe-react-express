@@ -1,0 +1,95 @@
+/*
+ * Design tokens: every colour, radius, shadow and timing value lives here.
+ * Components only ever reference these variables, so theming (light/dark)
+ * is just a matter of swapping the values on <html data-theme="…">.
+ */
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f1f3f6;
+  --surface-hover: #eef0f4;
+  --border: #e3e6eb;
+  --border-strong: #cdd2da;
+  --text: #171a21;
+  --text-muted: #5b6270;
+  --text-subtle: #8b919d;
+
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-soft: rgb(79 70 229 / 0.1);
+  --on-primary: #ffffff;
+  --danger: #dc2626;
+  --danger-soft: rgb(220 38 38 / 0.1);
+  --success: #15803d;
+  --success-soft: rgb(21 128 61 / 0.12);
+  --warning: #b45309;
+  --warning-soft: rgb(180 83 9 / 0.12);
+
+  --overlay: rgb(15 18 25 / 0.45);
+  --focus-ring: 0 0 0 3px rgb(79 70 229 / 0.3);
+  --focus-ring-danger: 0 0 0 3px rgb(220 38 38 / 0.25);
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgb(16 24 40 / 0.06);
+  --shadow-md: 0 4px 12px -2px rgb(16 24 40 / 0.1), 0 2px 4px -2px rgb(16 24 40 / 0.06);
+  --shadow-lg: 0 16px 40px -8px rgb(16 24 40 / 0.2), 0 4px 10px -4px rgb(16 24 40 / 0.08);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 320ms;
+
+  --sidebar-w: 252px;
+  --sidebar-w-collapsed: 68px;
+  --topbar-h: 60px;
+
+  --z-sticky: 20;
+  --z-popover: 60;
+  --z-overlay: 80;
+  --z-drawer: 90;
+  --z-toast: 100;
+  --z-progress: 110;
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #0f1115;
+  --surface: #171a20;
+  --surface-2: #1d2128;
+  --surface-hover: #232831;
+  --border: #2a2f38;
+  --border-strong: #3a414d;
+  --text: #eceef2;
+  --text-muted: #a3aab6;
+  --text-subtle: #737b88;
+
+  --primary: #818cf8;
+  --primary-hover: #a5b4fc;
+  --primary-soft: rgb(129 140 248 / 0.16);
+  --on-primary: #0f1115;
+  --danger: #f87171;
+  --danger-soft: rgb(248 113 113 / 0.14);
+  --success: #4ade80;
+  --success-soft: rgb(74 222 128 / 0.14);
+  --warning: #fbbf24;
+  --warning-soft: rgb(251 191 36 / 0.14);
+
+  --overlay: rgb(0 0 0 / 0.6);
+  --focus-ring: 0 0 0 3px rgb(129 140 248 / 0.35);
+  --focus-ring-danger: 0 0 0 3px rgb(248 113 113 / 0.3);
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.5);
+  --shadow-lg: 0 16px 40px -8px rgb(0 0 0 / 0.6);
+
+  color-scheme: dark;
+}

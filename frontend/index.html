@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Static defaults. At runtime src/lib/head.ts takes over title + favicon per route. -->
+    <title>BeFe Studio</title>
+    <meta name="description" content="A learning playground for production-grade React patterns." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#f6f7f9" />
+
+    <!--
+      Runs before the first paint so the page never flashes the wrong theme.
+      Must stay in sync with THEME_STORAGE_KEY in src/app/theme.ts.
+    -->
+    <script>
+      try {
+        var t = JSON.parse(localStorage.getItem('befe:theme') || '"system"')
+        var dark = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches)
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light'
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light'
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
